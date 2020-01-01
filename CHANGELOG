@@ -1,0 +1,35 @@
+Spectre Version 3.0 hotfix 2
+-Switched to python3 to handle python2 deprecation
+-Enhanced code readability and ability to be modified
+-Added (basic) GUI
+-Enhanced UX
+-Cleaned up junk
+-Switched AES modes
+-Enabled RSA private key encryption-at-rest
+-Removed secrets.py in favor of pycryptodomex get_random_bytes
+-Assorted bugfixes
+-Replaced getpass with easyinquirer password (Allows password to use asterisks instead of simply not showing up)
+-Laid groundwork for future updates
+
+HOTFIXES AND BONUS FEATURES
+-Added textbox clear button
+-Added RSA UID fingerprint check (Basic, but useful)
+-Improved chatbox layout
+-Fixed bug in authentication (third attempt was always rejected, even when right)
+-Added text wrapping
+-Added conversation banner
+
+KNOWN BUGS
+-Exit handling is very messy
+-Text wrapping does not prioritize spaces or other break-ready spots - just snips text at 75 characters
+-Client server-picking is very strict about errors
+-Peer can force close a chat window by closing their own and terminating their spectre process
+-Sending a message when peer has left chat can delay or prevent closing the gui
+
+PLANNED FEATURES
+-Further GUI development
+-File attachment
+-Peer-seeking (tentative) 
+-Contacts
+-Better text wrapping
+-Move to full-gui

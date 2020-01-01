@@ -1,0 +1,11 @@
+Client					Server
+Connect					
+					Send RSA key
+Gen AES key
+Encrypt AES key w/ server RSA key
+Send encrypted AES key
+					
+Establish encrypted channel		Establish encrypted channel ; ALL DATA FROM HERE ON OUT IS ENCRYPTED WITH AES
+					Send username+PKHash
+Send username+PKHash
+

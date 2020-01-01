@@ -1,0 +1,17 @@
+ERR#-CODE
+
+# provides the class of error, CODE provides specifics
+
+#
+0 - Generic or unknown error
+1 - Security error
+2 - Feature not implimented
+
+Common errors:
+ERR0-SOCK - Socket error
+ERR1-UIDM - UID mismatch. Invalid RSA keys.
+ERR2-ATCH - File attach attempt. Not implimented in this version. 
+ERR0-JSON - JSON parsing error
+ERR0-UNKWN - Unknown error
+ERR1-AKEY - AES key error
+ERR1-RKYE - RSA key error

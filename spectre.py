@@ -205,7 +205,10 @@ def client(username,password,uid,pubkey,privkey):
 
     s.send(encryptionsuite.encrypt_aes(identifier,aeskey))
     
-    spawnchat(s,serverusername,aeskey)
+    try:
+        spawnchat(s,serverusername,aeskey)
+    except:
+        exit("Cannot spawn chat. Todo: add gui-free option")
 
 def server(username,password,uid,pubkey,privkey):
     s = socket.socket()
@@ -256,7 +259,10 @@ def server(username,password,uid,pubkey,privkey):
     
     #TODO: Add contact check here, but do that later. 
 
-    spawnchat(sock,otherusername,aeskey)
+    try:
+        spawnchat(sock,otherusername,aeskey)
+    except:
+        exit("Cannot spawn chat. Todo: create gui-free option.")
 
 def authenticated(username,password,uid,pubkey,privkey):
     mode = easyinquirer.list("Would you like to operate in Client or Server mode?",['Client','Server'])

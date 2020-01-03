@@ -158,6 +158,29 @@ def get_ips():
     ip_addresses = [x['addr'] for x in links]
     return ip_addresses
 
+class cui_recv(Thread):
+    def __init__(self,username,sock):
+        Thread.__init__(self)
+        self.sock = sock
+
+        self.start()
+
+    def run(self):
+        while True:
+            data = self.sock.recv(2048)
+            dec = encryptionsuite.decrypt_aes(data,aeskey)
+            if dec:
+                print("[{}] {}".format(username,dec))
+
+def guiless(s,username,aeskey):
+    print("GUILESS ENVIRONMENT DETECTED\nENTERING FALLBACK MODE\nWARNING: EXPECT A DEGRADED USER EXPERIENCE\n")
+    print("Spectre | {}".format(username))
+    print("Conversation started at {}".format(datetime.datetime.now().strftime("%d %h %Y %H:%M:%S")))
+    cui_recv(username,s)
+    while True:
+        text = raw_input("")
+        s.send(encrypt_aes(text,aeskey))
+
 def client(username,password,uid,pubkey,privkey):
     host = easyinquirer.ask("Please enter the server IP")
     port = easyinquirer.ask("Please enter the server port (default 2143)")
@@ -208,7 +231,7 @@ def client(username,password,uid,pubkey,privkey):
     try:
         spawnchat(s,serverusername,aeskey)
     except:
-        exit("Cannot spawn chat. Todo: add gui-free option")
+        guiless(s,serverusername,aeskey)
 
 def server(username,password,uid,pubkey,privkey):
     s = socket.socket()
@@ -262,7 +285,7 @@ def server(username,password,uid,pubkey,privkey):
     try:
         spawnchat(sock,otherusername,aeskey)
     except:
-        exit("Cannot spawn chat. Todo: create gui-free option.")
+        guiless(sock,otherusername,aeskey)
 
 def authenticated(username,password,uid,pubkey,privkey):
     mode = easyinquirer.list("Would you like to operate in Client or Server mode?",['Client','Server'])

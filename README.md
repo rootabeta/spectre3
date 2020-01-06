@@ -1,2 +1,18 @@
 # spectre3
-Spectre version 3
+Welcome to Spectre 3! 
+Spectre is a secure, end-to-end encrypted chat program designed with security as a first priority.
+With Spectre3, we've moved away from python2 and rewritten the program in python3, and taken the opportunity to rewrite the project better than ever.
+Spectre now includes more robust encryption, a new AES mode (We are now using CTR instead of CBC), better key generation, and a better user interface. Using Spectre has never been as easy or as safe. 
+Enjoy privacy, the easy way.
+
+Installation and Setup:
+Spectre was designed to be easy to setup and use. To get started, simply run:
+
+1) Install requirements. This can be done by running:
+$pip3 install -r requirements
+If this does not work, try
+python3 -m pip install -r requirements
+If on windows, ensure you are running this command from an elevated command prompt
+
+2) Run spectre.
+$python3 spectre.py

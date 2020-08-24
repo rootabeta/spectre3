@@ -17,11 +17,11 @@ Spectre was designed to be easy to setup and use. To get started, simply run:
 
 1) Install requirements. This can be done by running:
 
-$pip3 install -r requirements
+`pip3 install -r requirements`
 
 If this does not work, try
 
-python3 -m pip install -r requirements
+`python3 -m pip install -r requirements`
 
 If on windows, ensure you are running this command from an elevated command prompt
 
@@ -29,4 +29,4 @@ If on windows, ensure you are running this command from an elevated command prom
 
 2) Run spectre.
 
-$python3 spectre.py
+`python3 spectre.py`

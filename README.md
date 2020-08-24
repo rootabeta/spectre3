@@ -1,4 +1,4 @@
-# spectre3
+# Spectre3
 Welcome to Spectre 3! 
 
 Spectre is a secure, end-to-end encrypted chat program designed with security as a first priority.
